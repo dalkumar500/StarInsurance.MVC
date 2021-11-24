@@ -1,0 +1,80 @@
+﻿@model IEnumerable<StarInsurance.Models.ClaimListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="text-center mt-4">All Claims</h2>
+<table class="table table-dark table-striped" >
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ClaimId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClaimType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClaimAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfIncident)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfClaim)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsValid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedUtc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InsurancePolicyId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) 
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClaimId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClaimType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClaimAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfIncident)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfClaim)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsValid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedUtc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InsurancePolicyId)
+        </td>
+        <td >
+            @Html.ActionLink("Edit", "Edit", new { id = item.ClaimId }, htmlAttributes:new {@class = "btn btn-warning btn-sm" })|
+            @Html.ActionLink("Details", "Details", new { id = item.ClaimId }, htmlAttributes: new {@class = "btn btn-info btn-sm" })|
+            @Html.ActionLink("Delete", "Delete", new { id = item.ClaimId }, htmlAttributes: new {@class = "btn btn-danger btn-sm" })
+        </td>
+    </tr>
+}
+</table>
+<p class="text-center">
+    @Html.ActionLink("Create New", "Create",null, htmlAttributes: new { @class = "btn btn-outline-light" })
+</p>

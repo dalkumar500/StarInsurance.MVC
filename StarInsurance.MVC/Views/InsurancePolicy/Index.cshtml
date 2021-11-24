@@ -1,0 +1,64 @@
+﻿@model IEnumerable<StarInsurance.Models.InsurancePolicyListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="text-center mt-4">All Insurance Policies</h2>
+<table class="table table-dark table-striped">
+
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.InsurancePolicyId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PolicyNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfPolicy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedUtc)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InsurancePolicyId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PolicyNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOfPolicy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedUtc)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.InsurancePolicyId }, htmlAttributes: new { @class = "btn btn-warning btn-sm" }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.InsurancePolicyId }, htmlAttributes: new { @class = "btn btn-info btn-sm" } ) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.InsurancePolicyId },htmlAttributes: new { @class = "btn btn-danger btn-sm" })
+                </td>
+            </tr>
+        }
+
+    </table>
+    <p>
+        @Html.ActionLink("Create New", "Create", null, htmlAttributes: new { @class = "btn btn-outline-light" })
+    </p>

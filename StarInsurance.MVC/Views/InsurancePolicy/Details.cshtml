@@ -1,0 +1,42 @@
+﻿@model StarInsurance.Models.InsurancePolicyDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h1 class="text-center mt-4">@Html.DisplayFor(model => model.Name) claim </h1>
+<hr />
+<div>
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.PolicyClaims) (@Html.DisplayFor(model => model.PolicyNumber))
+        </dt>
+    </dl>
+
+    <div class="card-deck">
+        <div class="row text-center">
+            @foreach (var claim in Model.PolicyClaims)
+            {
+                if (User.Identity.IsAuthenticated)
+                {
+                    <div class="card bg-dark text-light col-5.5" style="width:18rem;">
+                        <div class=" card-body">
+                            <h5 class=" card-title text-center font-weight-bold">@Html.DisplayFor(modelItem =>claim.ClaimType )</h5>
+                            <p class="card-text text-center">@Html.DisplayFor(modelItem => claim.ClaimAmount)</p>
+                        </div>
+                        <div class=" text-center card-footer">
+                            <p>Created:@Html.DisplayFor(modelItem => claim.CreatedUtc)</p>
+                            <p>Modified:@Html.DisplayFor(modelItem => claim.ModifiedUtc)</p>
+                        </div>
+                    </div>
+                }
+      }
+    </div>
+    </div>
+    </div>
+    
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.InsurancePolicyId }, htmlAttributes: new { @class = "btn btn-warning btn-sm" }) |
+        @Html.ActionLink("Back to List", "Index", null, htmlAttributes: new { @class = "text-light" })
+    </p>
+

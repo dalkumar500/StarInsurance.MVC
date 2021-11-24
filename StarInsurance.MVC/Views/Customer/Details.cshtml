@@ -1,0 +1,105 @@
+﻿@model StarInsurance.Models.CustomerDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h1 class="text-center mt-4">Customer's'Details</h1>
+
+<hr />
+<div>
+<dl class="dl-horizontal">
+    <dt>
+        @Html.DisplayNameFor(model => model.CustomerId)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.CustomerId)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.FirstName)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.FirstName)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.LastName)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.LastName)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.FullName)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.FullName)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.Address)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Address)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.PhoneNumber)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.PhoneNumber)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.Email)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Email)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.OwnerId)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.OwnerId)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.ModifiedUtc)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.ModifiedUtc)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.CreatedUtc)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.CreatedUtc)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.InsurancePolicyId)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.InsurancePolicyId)
+    </dd>
+
+</dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CustomerId },htmlAttributes:new { @class = "text-light" }) |
+    @Html.ActionLink("Back to List", "Index", null, htmlAttributes: new { @class = "text-light" })
+</p>
