@@ -97,14 +97,13 @@ namespace Services
                         ctx
                         .InsurancePolicies
                         .Single(e => e.InsurancePolicyId == model.InsurancePolicyId && e.OwnerId == _userId);
-
-                    entity.DateOfPolicy = model.DateOfPolicy;
+                    
+                    entity.InsurancePolicyId = model.InsurancePolicyId;
                     entity.Name = model.Name;
                     entity.Address = model.Address;
+                    entity.PolicyNumber = model.PolicyNumber;
                     entity.ModifiedUtc = DateTimeOffset.UtcNow;
-
-
-
+                  
                 return ctx.SaveChanges() == 1;
                 }
             }

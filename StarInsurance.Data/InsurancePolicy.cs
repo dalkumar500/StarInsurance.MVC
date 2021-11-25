@@ -35,8 +35,8 @@ namespace StarInsurance.Data
         public virtual List<PolicyClaim>PolicyClaims { get; set; }
         public virtual List<Customer> Customers { get; set; }
         [Required]
+        
         [Display(Name = "Date Created")]
-
         public DateTimeOffset CreatedUtc { get; set; }
 
         [Display(Name = "Date Modified")]
